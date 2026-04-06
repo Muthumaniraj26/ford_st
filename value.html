@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford Project 1: Comprehensive AI & DS Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            display: none;
+            min-height: 85vh;
+        }
+
+        .slide.active {
+            display: block;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-btn {
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: scale(1.05);
+        }
+
+        .module-node {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .module-node:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-black text-xl">F
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-tighter text-white uppercase">Project 01: Generative Fixture
+                        Design</h1>
+                    <p class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">Ford Chennai x IIT Madras
+                        x RIT</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <span id="slideCounter"
+                    class="text-xs font-mono text-slate-500 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">01
+                    / 07</span>
+                <div class="flex space-x-2">
+                    <button onclick="prevSlide()" class="nav-btn p-2 rounded-lg glass">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <button onclick="nextSlide()" class="nav-btn p-2 rounded-lg glass">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="h-1 bg-slate-900 mb-10 rounded-full overflow-hidden">
+            <div id="progressFill" class="progress-fill" style="width: 14.28%;"></div>
+        </div>
+
+        <!-- SLIDE 1: PROJECT CONTEXT -->
+        <div id="slide1" class="slide active">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span
+                        class="text-blue-500 font-bold text-xs tracking-widest uppercase bg-blue-500/10 px-3 py-1 rounded">01.
+                        Discovery & Data</span>
+                    <h2 class="text-6xl font-black leading-tight text-white">Engineering the <br><span
+                            class="text-blue-500">Master Agent.</span></h2>
+                    <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
+                        Fixture design for the <b>Ford HOOD Assembly</b> is complex. We are building a modular AI system
+                        where seven specialized agents interact via a central controller to automate 3D CAD generation.
+                    </p>
+                    <div class="flex space-x-4 pt-4">
+                        <div class="glass p-4 rounded-2xl flex-1">
+                            <p class="text-2xl font-black text-white">16 <span
+                                    class="text-sm font-normal text-slate-500">Weeks</span></p>
+                            <p class="text-[10px] uppercase text-slate-500 font-bold">Project Timeline</p>
+                        </div>
+                        <div class="glass p-4 rounded-2xl flex-1">
+                            <p class="text-2xl font-black text-white">07 <span
+                                    class="text-sm font-normal text-slate-500">AI Modules</span></p>
+                            <p class="text-[10px] uppercase text-slate-500 font-bold">Modular Architecture</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="glass p-8 rounded-3xl border-blue-500/20 border-2">
+                        <h3 class="text-blue-400 font-bold mb-6 text-sm uppercase tracking-widest">Initial Data
+                            Inventory</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-slate-900/50 p-4 rounded-xl flex justify-between items-center border border-slate-800">
+                                <div>
+                                    <p class="text-sm font-bold">Legacy Fixture Programs</p>
+                                    <p class="text-[10px] text-slate-500">Historical 3D/2D datasets</p>
+                                </div>
+                                <span class="text-blue-400 font-mono text-xl">25+</span>
+                            </div>
+                            <div
+                                class="bg-slate-900/50 p-4 rounded-xl flex justify-between items-center border border-slate-800">
+                                <div>
+                                    <p class="text-sm font-bold">BCE Standard Library</p>
+                                    <p class="text-[10px] text-slate-500">Parametric components</p>
+                                </div>
+                                <span class="text-blue-400 font-mono text-xl">15,000+</span>
+                            </div>
+                            <div
+                                class="bg-slate-900/50 p-4 rounded-xl flex justify-between items-center border border-slate-800">
+                                <div>
+                                    <p class="text-sm font-bold">Assembly Product Data</p>
+                                    <p class="text-[10px] text-slate-500">LD, MP, and AFD Geometries</p>
+                                </div>
+                                <span class="text-blue-400 font-mono text-xl">HOOD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: THE 7 AI MODULES (INTERACTIVE) -->
+        <div id="slide2" class="slide">
+            <h2 class="text-3xl font-black mb-2 text-center">Master Architecture: The 7 AI Modules</h2>
+            <p class="text-slate-500 text-center mb-10 text-sm">Click a module to see technical details</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-10">
+                <div onclick="showModule(1)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-blue-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 1</p>
+                    <p class="text-xs font-black">CAD Parser</p>
+                </div>
+                <div onclick="showModule(2)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-blue-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 2</p>
+                    <p class="text-xs font-black">Legacy Retriever</p>
+                </div>
+                <div onclick="showModule(3)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-blue-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 3</p>
+                    <p class="text-xs font-black">Standards NLP</p>
+                </div>
+                <div onclick="showModule(4)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-blue-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 4</p>
+                    <p class="text-xs font-black">Library Indexer</p>
+                </div>
+                <div onclick="showModule(5)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-amber-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 5</p>
+                    <p class="text-xs font-black">Generative Eng.</p>
+                </div>
+                <div onclick="showModule(6)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-emerald-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 6</p>
+                    <p class="text-xs font-black">Clash Analysis</p>
+                </div>
+                <div onclick="showModule(7)"
+                    class="module-node glass p-4 rounded-xl border-t-4 border-emerald-500 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-1">AI 7</p>
+                    <p class="text-xs font-black">Feasibility</p>
+                </div>
+            </div>
+
+            <div id="moduleDetail" class="glass p-8 rounded-3xl min-h-[250px] relative">
+                <div id="moduleContent">
+                    <h3 class="text-2xl font-black mb-4 text-blue-400">Select a module above to explore</h3>
+                    <p class="text-slate-400">This architecture separates data ingestion (AI 1-4) from creation (AI 5)
+                        and validation (AI 6-7).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: AI&DS STUDENT ROLES (DEEP DIVE) -->
+        <div id="slide3" class="slide">
+            <h2 class="text-3xl font-black mb-10 text-center">AI & DS Team: Skill & Responsibility Mapping</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- S1 -->
+                <div class="glass p-8 rounded-3xl relative">
+                    <div
+                        class="absolute -top-4 left-6 bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">
+                        Student 01</div>
+                    <h3 class="text-xl font-black mb-2 mt-2">Lead Data & NLP</h3>
+                    <p class="text-xs text-blue-400 font-bold mb-4 italic">"The Knowledge Extractor"</p>
+                    <div class="space-y-4 text-xs text-slate-400">
+                        <p><b>Core Module:</b> AI 3 (NLP/OCR Pipeline)</p>
+                        <p><b>Workflow:</b> Converts unstructured design standards into a structured rule-store using
+                            LLMs and Layout understanding models.</p>
+                        <div class="bg-slate-900/50 p-3 rounded-lg">
+                            <p class="text-[10px] text-slate-500 uppercase mb-2">Key Languages</p>
+                            <span
+                                class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 mr-1">Python</span>
+                            <span
+                                class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20">Regex</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- S2 -->
+                <div class="glass p-8 rounded-3xl relative border-blue-500/30 border">
+                    <div
+                        class="absolute -top-4 left-6 bg-blue-500 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">
+                        Student 02</div>
+                    <h3 class="text-xl font-black mb-2 mt-2">Lead LLM & Agents</h3>
+                    <p class="text-xs text-blue-400 font-bold mb-4 italic">"The Master Architect"</p>
+                    <div class="space-y-4 text-xs text-slate-400">
+                        <p><b>Core Module:</b> AI 5 & Master AI Agent</p>
+                        <p><b>Workflow:</b> Orchestrates AI 1-4 stores using LangGraph. Writes the prompt logic that
+                            drives the Adam API for 3D generation.</p>
+                        <div class="bg-slate-900/50 p-3 rounded-lg">
+                            <p class="text-[10px] text-slate-500 uppercase mb-2">Key Libraries</p>
+                            <span
+                                class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 mr-1">LangGraph</span>
+                            <span class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20">Adam
+                                Client</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- S3 -->
+                <div class="glass p-8 rounded-3xl relative">
+                    <div
+                        class="absolute -top-4 left-6 bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">
+                        Student 03</div>
+                    <h3 class="text-xl font-black mb-2 mt-2">Lead Vector & Graph</h3>
+                    <p class="text-xs text-blue-400 font-bold mb-4 italic">"The Memory Manager"</p>
+                    <div class="space-y-4 text-xs text-slate-400">
+                        <p><b>Core Module:</b> AI 2 & AI 4 (Retrieval/Indexing)</p>
+                        <p><b>Workflow:</b> Indexes 15k parts into Neo4j and legacy drawings into Milvus. Manages vector
+                            similarity and relationship mapping.</p>
+                        <div class="bg-slate-900/50 p-3 rounded-lg">
+                            <p class="text-[10px] text-slate-500 uppercase mb-2">Key DBs</p>
+                            <span
+                                class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 mr-1">Neo4j</span>
+                            <span
+                                class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20">Milvus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: FULL WORKFLOW INTERACTION -->
+        <div id="slide4" class="slide">
+            <h2 class="text-3xl font-black mb-10 text-center">Interactive Generation Pipeline</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="flex items-center space-x-6">
+                    <div
+                        class="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-blue-500 border border-blue-500/30">
+                        1</div>
+                    <div class="flex-1 glass p-4 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <p class="font-bold">Input Upload</p>
+                            <p class="text-xs text-slate-500">HOOD Geometry (LD/MP/AFD)</p>
+                        </div>
+                        <span class="text-[10px] bg-slate-900 px-3 py-1 rounded border border-slate-700">Student 01
+                            Pipeline</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div
+                        class="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-blue-500 border border-blue-500/30">
+                        2</div>
+                    <div class="flex-1 glass p-4 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <p class="font-bold">Context Retrieval</p>
+                            <p class="text-xs text-slate-500">Querying similar legacy cases + relevant standards</p>
+                        </div>
+                        <span class="text-[10px] bg-slate-900 px-3 py-1 rounded border border-slate-700">Student 03
+                            System</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div
+                        class="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-blue-500 border border-blue-500/30">
+                        3</div>
+                    <div
+                        class="flex-1 glass p-4 rounded-2xl flex justify-between items-center border-blue-500/40 border">
+                        <div>
+                            <p class="font-bold">Agent Reasoning</p>
+                            <p class="text-xs text-slate-500">Planning part placement based on mating faces & rules</p>
+                        </div>
+                        <span class="text-[10px] bg-blue-500 px-3 py-1 rounded">Student 02 Master Agent</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div
+                        class="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-blue-500 border border-blue-500/30">
+                        4</div>
+                    <div class="flex-1 glass p-4 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <p class="font-bold">CAD Construction</p>
+                            <p class="text-xs text-slate-500">Executing parametric assembly via Adam API scripts</p>
+                        </div>
+                        <span class="text-[10px] bg-slate-900 px-3 py-1 rounded border border-slate-700">Automated
+                            Execution</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div
+                        class="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-blue-500 border border-blue-500/30">
+                        5</div>
+                    <div
+                        class="flex-1 glass p-4 rounded-2xl flex justify-between items-center border-emerald-500/40 border bg-emerald-500/5">
+                        <div>
+                            <p class="font-bold">Validation Loop</p>
+                            <p class="text-xs text-slate-500">Clash detection, Ergonomics, and Kinematic checks</p>
+                        </div>
+                        <span class="text-[10px] bg-emerald-600 px-3 py-1 rounded">Mech Student Lead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: TECH STACK & TOOLS -->
+        <div id="slide5" class="slide">
+            <h2 class="text-3xl font-black mb-10">Integrated Technology Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-3xl">
+                        <h4 class="text-blue-400 font-bold text-sm uppercase mb-4 tracking-widest">Orchestration & AI
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">LangGraph</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">Claude
+                                3.5/GPT-4</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">PointNet</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">MeshCNN</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">LayoutLMv3</span>
+                        </div>
+                    </div>
+                    <div class="glass p-6 rounded-3xl">
+                        <h4 class="text-blue-400 font-bold text-sm uppercase mb-4 tracking-widest">Data & Persistence
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">Neo4j
+                                (Graph)</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">Milvus
+                                (Vector)</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">PostgreSQL</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 rounded border border-slate-700 text-xs font-mono">S3/Blob
+                                Storage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-3xl border-blue-500/20 border">
+                        <h4 class="text-blue-400 font-bold text-sm uppercase mb-4 tracking-widest">Engineering & CAD
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-white">Ford Adam API</span>
+                                <span class="text-[10px] text-slate-500">Primary Integration</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-white">CATIA / Siemens NX</span>
+                                <span class="text-[10px] text-slate-500">Design Platforms</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-white">Open Cascade</span>
+                                <span class="text-[10px] text-slate-500">Geometry Kernel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass p-6 rounded-3xl bg-blue-600/5">
+                        <h4 class="text-blue-400 font-bold text-sm uppercase mb-4 tracking-widest">DevOps & MLOps</h4>
+                        <div class="flex gap-4">
+                            <div class="flex-1 bg-slate-900 p-3 rounded text-center border border-slate-800">
+                                <p class="text-xs font-bold">MLflow</p>
+                                <p class="text-[10px] text-slate-500">Tracking</p>
+                            </div>
+                            <div class="flex-1 bg-slate-900 p-3 rounded text-center border border-slate-800">
+                                <p class="text-xs font-bold">Docker</p>
+                                <p class="text-[10px] text-slate-500">Deployment</p>
+                            </div>
+                            <div class="flex-1 bg-slate-900 p-3 rounded text-center border border-slate-800">
+                                <p class="text-xs font-bold">Airflow</p>
+                                <p class="text-[10px] text-slate-500">Pipelines</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: OUTPUTS & TOOLS -->
+        <div id="slide6" class="slide">
+            <h2 class="text-3xl font-black mb-10">Output Formats & Generation Tools</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-3xl">
+                    <h3 class="text-xl font-black mb-6 text-blue-400 uppercase tracking-widest text-sm">Primary
+                        Deliverables</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start justify-between border-b border-slate-800 pb-4">
+                            <div>
+                                <p class="font-bold text-white">3D Fixture Model</p>
+                                <p class="text-xs text-slate-500">Editable Parametric CAD Assembly</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-mono text-blue-500">FORMAT: .CATPART / .PRT</p>
+                                <p class="text-[10px] font-bold text-slate-400">TOOL: ADAM API</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between border-b border-slate-800 pb-4">
+                            <div>
+                                <p class="font-bold text-white">Technical 2D Drawings</p>
+                                <p class="text-xs text-slate-500">Parts, Units, and Fixture level</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-mono text-blue-500">FORMAT: .DWG / .PDF</p>
+                                <p class="text-[10px] font-bold text-slate-400">TOOL: AUTO-SCRIPT</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <p class="font-bold text-white">Bill of Materials (BOM)</p>
+                                <p class="text-xs text-slate-500">Unit-level nested BOM</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-mono text-blue-500">FORMAT: .CSV / .JSON</p>
+                                <p class="text-[10px] font-bold text-slate-400">TOOL: PANDAS/SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl bg-emerald-600/5">
+                    <h3 class="text-xl font-black mb-6 text-emerald-500 uppercase tracking-widest text-sm">Verification
+                        Artifacts</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-emerald-900/30">
+                            <p class="text-xs font-bold text-white">Clash Analysis Report</p>
+                            <p class="text-[10px] text-slate-500 mt-1">Interference detection with severity ranking</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-emerald-900/30">
+                            <p class="text-xs font-bold text-white">Feasibility Trace</p>
+                            <p class="text-[10px] text-slate-500 mt-1">Motion simulation trace for drive-in/out paths
+                            </p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-emerald-900/30">
+                            <p class="text-xs font-bold text-white">Design Decision Log</p>
+                            <p class="text-[10px] text-slate-500 mt-1">LLM reasoning trail for chosen components</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: SUMMARY & SUCCESS -->
+        <div id="slide7" class="slide">
+            <div class="text-center py-10">
+                <h2 class="text-6xl font-black mb-4">Phase 1 <span class="text-blue-500">MVP.</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mb-16 text-lg">By Week 16, we will deliver an end-to-end
+                    prototype capable of generating a fixture for one HOOD variant with full validation.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 glass rounded-3xl border-2 border-slate-800">
+                        <div
+                            class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-black mb-2">Automated</h4>
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-4">Design Logic</p>
+                        <p class="text-xs text-slate-400">Removing human bottleneck in routine fixture assembly tasks.
+                        </p>
+                    </div>
+                    <div class="p-8 glass rounded-3xl border-2 border-slate-800">
+                        <div
+                            class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-black mb-2">Fast</h4>
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-4">Cycle Time</p>
+                        <p class="text-xs text-slate-400">Reducing weeks of manual work to minutes of generative
+                            compute.</p>
+                    </div>
+                    <div class="p-8 glass rounded-3xl border-2 border-slate-800">
+                        <div
+                            class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-black mb-2">Standardized</h4>
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-4">Quality & Logic</p>
+                        <p class="text-xs text-slate-400">Enforcing BCE design standards automatically in every
+                            iteration.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-slate-900">
+                    <p class="text-slate-500 font-black tracking-tighter text-2xl uppercase">Ready to Build.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 7;
+
+        const moduleData = {
+            1: { title: "AI 1: CAD Geometry Parser", content: "Processes 3D Models into geometric feature vectors. <br><br><b>Models:</b> PointNet / MeshCNN<br><b>Input:</b> HOOD CAD<br><b>Output:</b> Feature vectors + Mating faces + Datums." },
+            2: { title: "AI 2: Legacy Program Retriever", content: "Searches 25+ historical programs for similar fixtures. <br><br><b>Models:</b> CLIP / Sentence-BERT<br><b>Stack:</b> Milvus Vector DB<br><b>Logic:</b> Case-based retrieval of legacy assembly logic." },
+            3: { title: "AI 3: Standards NLP Pipeline", content: "Converts PDF design guidelines into queryable rules. <br><br><b>Models:</b> LayoutLMv3 / GPT-4<br><b>Stack:</b> Azure Document Intelligence<br><b>Outcome:</b> Rule-tagged design constraints." },
+            4: { title: "AI 4: Component Library Indexer", content: "Maps 15,000+ standard parts. <br><br><b>Models:</b> Multi-modal embeddings<br><b>Stack:</b> Neo4j Graph Database<br><b>Outcome:</b> Searchable parts catalogue with compatibility rules." },
+            5: { title: "AI 5: Generative Fixture Design", content: "The core engine that creates the 3D fixture assembly. <br><br><b>Logic:</b> RAG + Rule-based templates + LLM Reasoning<br><b>Execution:</b> Python CAD scripting via Adam API." },
+            6: { title: "AI 6: Clash Analysis", content: "Checks for interference between part, fixture, and weld guns. <br><br><b>Logic:</b> Geometric reasoning + CAD kernel interference<br><b>Output:</b> Ranked clash report with suggestions." },
+            7: { title: "AI 7: Feasibility Check", content: "Validates drive-in and drive-out motion paths. <br><br><b>Models:</b> RRT / PRM Motion Planning<br><b>Outcome:</b> Motion trace validation (Pass/Fail)." }
+        };
+
+        function showModule(id) {
+            const detail = document.getElementById('moduleContent');
+            const data = moduleData[id];
+            detail.innerHTML = `
+                <h3 class="text-2xl font-black mb-4 text-blue-400">${data.title}</h3>
+                <p class="text-slate-300 leading-relaxed">${data.content}</p>
+            `;
+        }
+
+        function updateSlide() {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            document.getElementById('slide' + currentSlide).classList.add('active');
+
+            document.getElementById('slideCounter').innerText = `${currentSlide.toString().padStart(2, '0')} / ${totalSlides.toString().padStart(2, '0')}`;
+            document.getElementById('progressFill').style.width = (currentSlide / totalSlides) * 100 + '%';
+            window.scrollTo(0, 0);
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 1) { currentSlide--; updateSlide(); } }
+
+        updateSlide();
+    </script>
+</body>
+
+</html>
